@@ -55,6 +55,13 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.of(context).pushNamed("new_page3", arguments: "H1");
               },
+            ),
+            FlatButton(
+              child: Text("打开Counter页面"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.of(context).pushNamed('new_page2');
+              },
             )
           ],
         ),
