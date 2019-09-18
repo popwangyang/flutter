@@ -14,7 +14,6 @@ class TextPage extends StatelessWidget {
         title: Text("文本及样式"),
       ),
       body: Container(
-
         child: Column(
           children: <Widget>[
             new Text('pppppppp'),

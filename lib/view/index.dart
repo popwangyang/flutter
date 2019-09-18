@@ -20,6 +20,13 @@ class IndexPage extends StatelessWidget{
                 Navigator.of(context).pushNamed('index');
               },
             ),
+            FlatButton(
+               child: Text('Container容器'),
+               textColor: Colors.blue,
+               onPressed: () {
+                 Navigator.of(context).pushNamed('container');
+               },
+             ),
           ],
         ),
       ),
