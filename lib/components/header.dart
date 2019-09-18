@@ -41,11 +41,25 @@ class Header extends StatelessWidget{
               width: 38.0,
               height: 38.0,
               margin: EdgeInsets.only(left: 4.0),
-              child: Icon(
-                MyIcons.camera,
-                color: Colors.white,
-                size: 32.0,
-              ),
+              child: Column(
+                children: <Widget>[
+                  Icon(
+                    MyIcons.camera,
+                    color: Colors.white,
+                    size: 24.0,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 2.0),
+                    child: Text('发布',
+                      style: TextStyle(
+                        fontSize: 10.0,
+                        color: Colors.white,
+                      ),
+                    ),
+                  )
+
+                ],
+              )
             )
           ],
         ),
