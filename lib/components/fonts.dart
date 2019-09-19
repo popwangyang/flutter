@@ -14,4 +14,16 @@ class MyIcons{
     matchTextDirection: true
   );
 
+  static const IconData player = const IconData(
+    0xe611,
+    fontFamily: 'MyIcon',
+    matchTextDirection: true
+  );
+
+  static const IconData close = const IconData(
+    0xe6a4,
+    fontFamily: 'MyIcon',
+    matchTextDirection: true
+  );
+
 }

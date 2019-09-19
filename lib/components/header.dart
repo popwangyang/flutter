@@ -46,13 +46,13 @@ class Header extends StatelessWidget{
                   Icon(
                     MyIcons.camera,
                     color: Colors.white,
-                    size: 24.0,
+                    size: 22.0,
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 2.0),
                     child: Text('发布',
                       style: TextStyle(
-                        fontSize: 10.0,
+                        fontSize: 9.0,
                         color: Colors.white,
                       ),
                     ),
@@ -92,7 +92,7 @@ class InputContent extends StatelessWidget{
           child: Container(
             height: 38.0,
             alignment: Alignment.centerLeft,
-            child: Text("刨煤机承认UFO视频|继承来那个搜索我",
+            child: Text("刨煤机承认UFO视频|继承来那个搜索我|刨煤机承认UFO视频|继承来那个搜索我",
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
