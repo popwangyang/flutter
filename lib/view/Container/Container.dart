@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/components/header.dart';
-import 'package:flutter_app/components/TextDisplay.dart';
-import 'package:flutter_app/components/VideoBox.dart';
+import 'package:flutter_app/components/Box.dart';
+import 'package:flutter_app/components/bottomBar.dart';
+
 
 class ContainerPage extends StatelessWidget{
 
@@ -38,26 +39,51 @@ class ContainerPage extends StatelessWidget{
         'type': '1',
         'urlSrc': 'lib/assets/2.jpg',
         'time': '20:00'
-      }
+      },
+      {
+        'title': '长达两个小时的魔幻动作片中,唯一一部一次连看两遍的片子',
+        'hot': '0',
+        'source': '全球影视基地',
+        'CommentNumber': '109',
+        'type': '2',
+        'urlSrc1': 'lib/assets/4.jpg',
+        'urlSrc2': 'lib/assets/5.jpg',
+        'urlSrc3': 'lib/assets/6.jpg',
+      },
+      {
+        'title': '长达两个小时的魔幻动作片中,唯一一部一次连看两遍的片子',
+        'hot': '0',
+        'source': '全球影视基地',
+        'CommentNumber': '109',
+        'type': '3',
+        'urlSrc': 'lib/assets/4.jpg',
+      },
     ];
+    const list = ['0', '1', '2'];
     return Scaffold(
-      appBar: new AppBar(
-        title: Text('Container容器'),
-      ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Header(),
-          Column(
-            children: data.map((e){
-              if(e['type'] == '0'){
-                return TextDisplay(obj: e);
-              }else{
-                return VideoBox(obj: e);
-              }
-            }).toList(),
+          Expanded(
+            child: Scrollbar(
+              child: SingleChildScrollView(
+                child:  Column(
+                  children: data.map((e){
+                    if(list.indexOf(e['type']) > -1){
+                      return Box(obj: e);
+                    }else{
+                      return BoxRow(obj: e);
+                    }
+                  }).toList(),
+                ),
+              ),
+            ),
+          ),
+          Container(
+            height: 50.0,
+            child: BottomBar(),
           )
-        ]
+        ],
       )
     );
   }

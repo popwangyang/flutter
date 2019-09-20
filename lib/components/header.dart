@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/components/fonts.dart';
 
+
+
+
+
+
+
+
+
 class Header extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return new Container(
-      margin: EdgeInsets.only(top: 30.0, left: 0.0),
+      margin: EdgeInsets.only(top: 00.0, left: 0.0),
+      padding: EdgeInsets.only(top: 20.0),
       constraints: BoxConstraints.tightFor(
-        height: 50.0,
+        height: 70.0,
       ),
       decoration: BoxDecoration(
         color: Colors.red,

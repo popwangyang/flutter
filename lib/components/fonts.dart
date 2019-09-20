@@ -26,4 +26,12 @@ class MyIcons{
     matchTextDirection: true
   );
 
+  static const IconData home = const IconData(
+    0xe8cf,
+    fontFamily: 'MyIcon',
+    matchTextDirection: true
+  );
+
+
+
 }
