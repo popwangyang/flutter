@@ -62,6 +62,13 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.of(context).pushNamed('new_page2');
               },
+            ),
+            FlatButton(
+              child: Text("打开Scaffoldv页面"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.of(context).pushNamed('new_page4');
+              },
             )
           ],
         ),
