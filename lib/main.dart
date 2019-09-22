@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/view/myHomePage.dart';
+import 'package:flutter_app/view/index.dart';
 import 'package:flutter_app/router/router.dart';
+
 
 void main() => runApp(new MyApp());
 
@@ -15,12 +16,11 @@ class MyApp extends StatelessWidget {
       ),
       //注册路由表
       routes: routes,
-      home: new MyHomePage(title: 'Flutter Demo Home Page'), 
+      home: new IndexPage(),
       onGenerateRoute: (RouteSettings settings){
         WidgetBuilder builder;
-        print(settings.name);
         return MaterialPageRoute(builder: (context) {
-          return new MyHomePage(title: 'Flutter Demo Home Page');
+          return new IndexPage();
         });
       }
     );
