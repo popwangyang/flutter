@@ -18,7 +18,7 @@ class Header extends StatelessWidget{
       margin: EdgeInsets.only(top: 00.0, left: 0.0),
       padding: EdgeInsets.only(top: 20.0),
       constraints: BoxConstraints.tightFor(
-        height: 70.0,
+        height: 80.0,
       ),
       decoration: BoxDecoration(
         color: Colors.red,
@@ -55,7 +55,7 @@ class Header extends StatelessWidget{
                   Icon(
                     MyIcons.camera,
                     color: Colors.white,
-                    size: 22.0,
+                    size: 24.0,
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 2.0),
@@ -65,8 +65,7 @@ class Header extends StatelessWidget{
                         color: Colors.white,
                       ),
                     ),
-                  )
-
+                  ),
                 ],
               )
             )

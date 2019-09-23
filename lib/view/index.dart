@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_app/view/Animation/Animation.dart';
 
 class IndexPage extends StatelessWidget{
   IndexPage({Key key}) : super(key : key);
@@ -11,7 +13,7 @@ class IndexPage extends StatelessWidget{
       ),
       body: new Container(
         padding: EdgeInsets.all(10.0),
-        child: new Row(
+        child: new Wrap(
           children: <Widget>[
              FlatButton(
               child: Text('文本及样式'),
@@ -33,7 +35,44 @@ class IndexPage extends StatelessWidget{
               onPressed: (){
                 Navigator.of(context).pushNamed('listComponent');
               },
-            )
+            ),
+            FlatButton(
+              child: Text('animation动画'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.of(context).pushNamed('animationPage');
+              },
+            ),
+            FlatButton(
+              child: Text('路由动画'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.push(context, CupertinoPageRoute(
+                  builder: (context) => AnimationPage()
+                ));
+              },
+            ),
+            FlatButton(
+              child: Text('Hero动画'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.of(context).pushNamed('heroPage');
+              },
+            ),
+            FlatButton(
+              child: Text('PopupMenuButton'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.of(context).pushNamed('PopupMenuButton');
+              },
+            ),
+            FlatButton(
+              child: Text('Overlay'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.of(context).pushNamed('Overlay');
+              },
+            ),
           ],
         ),
       ),
