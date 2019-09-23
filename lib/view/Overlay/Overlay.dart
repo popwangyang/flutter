@@ -10,6 +10,7 @@ class Toast {
           top: MediaQuery.of(context).size.height * 0.7,
           child: new Material(
             child: new Container(
+              color: Colors.red,
               width: MediaQuery.of(context).size.width,
               alignment: Alignment.center,
               child: new Center(
@@ -43,19 +44,19 @@ class OverlayDome extends StatelessWidget{
         title: Text("Overlay"),
       ),
       body: Center(
-        child: FlatButton(
-          color: Colors.yellow,
-          child: Text("按钮"),
-          onPressed:(){
-            _btn();
-          },
-        ),
+        child: GestureDetector(
+          child: Container(
+            child: Text("点击"),
+          ),
+          onTap: () => _btn(context),
+        )
+        ,
       ),
     );
   }
 
-  _btn() {
-    Toast.show(messgae: "mmmmmm");
+  void _btn(context) {
+    Toast.show(context:context,messgae: "mmmmmm");
   }
 }
 
