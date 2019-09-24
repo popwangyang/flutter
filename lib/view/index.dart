@@ -73,6 +73,13 @@ class IndexPage extends StatelessWidget{
                 Navigator.of(context).pushNamed('Overlay');
               },
             ),
+            FlatButton(
+              child: Text('Event'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.of(context).pushNamed('eventPage');
+              },
+            ),
           ],
         ),
       ),
