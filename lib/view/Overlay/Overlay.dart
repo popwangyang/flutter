@@ -54,6 +54,7 @@ class _OverlayDomeState extends State<OverlayDome>{
   bool statue;
 
   GlobalKey _key = GlobalKey();
+
   MyOverlay myOverlay;
 
   @override
@@ -181,8 +182,6 @@ class Item extends StatelessWidget{
       )
     );
   }
-
-
 }
 
 
