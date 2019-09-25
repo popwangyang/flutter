@@ -4,42 +4,7 @@ import 'package:flutter_app/components/fonts.dart';
 
 
 
-class Toast {
-  static void show({@required BuildContext context ,@required String messgae}){
-
-    OverlayEntry overlayEntry = new OverlayEntry(builder: (context){
-      return new Positioned(
-          top: MediaQuery.of(context).size.height * 0.7,
-          child: new Material(
-            child: new Container(
-              color: Colors.red,
-              width: MediaQuery.of(context).size.width,
-              alignment: Alignment.center,
-              child: new Center(
-                child: new Card(
-                  child: new Padding(
-                    padding: EdgeInsets.all(8),
-                    child: new Text(messgae),
-                  ),
-                  color: Colors.grey,
-                ),
-              ),
-            ),
-          ));
-    });
-
-    Overlay.of(context).insert(overlayEntry);
-
-    Future.delayed(Duration(seconds: 2)).then((value){
-      overlayEntry.remove();
-    });
-  }
-}
-
 class OverlayDome extends StatefulWidget{
-
-
-
 
   @override
   State<StatefulWidget> createState() {
@@ -68,10 +33,6 @@ class _OverlayDomeState extends State<OverlayDome>{
         child: Column(
           children: <Widget>[
             FlatButton(
-              child: Text('点击'),
-              onPressed: _btn,
-            ),
-            FlatButton(
               key: _key,
               child: Text("Overlay"),
               color: Colors.blue,
@@ -90,12 +51,6 @@ class _OverlayDomeState extends State<OverlayDome>{
     super.initState();
   }
 
-  void _btn() {
-    print("btn");
-    setState(() {
-      statue = !statue;
-    });
-  }
 
   void _foo(int value) {
     print(value);
