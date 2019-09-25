@@ -7,29 +7,66 @@ class Toast {
 
     OverlayEntry overlayEntry = new OverlayEntry(builder: (context){
       return new Positioned(
-          top: MediaQuery.of(context).size.height * 0.7,
+          top: kToolbarHeight,
+          right: 10,
+          width: 200,
+          height: 280,
+          child: new SafeArea(
           child: new Material(
-            child: new Container(
-              color: Colors.red,
-              width: MediaQuery.of(context).size.width,
-              alignment: Alignment.center,
-              child: new Center(
-                child: new Card(
-                  child: new Padding(
-                    padding: EdgeInsets.all(8),
-                    child: new Text(messgae),
-                  ),
-                  color: Colors.grey,
-                ),
-              ),
-            ),
-          ));
+          child: new Container(
+          color: Colors.black,
+          child: new Column(
+          children: <Widget>[
+          Expanded(
+          child: new ListTile(
+          leading: Icon(
+          Icons.add,
+          color: Colors.white,
+      ),
+      title: new Text(
+      "发起群聊",
+      style: TextStyle(color: Colors.white),
+      ),
+      ),
+      ),
+      Expanded(
+      child: new ListTile(
+      leading: Icon(Icons.add, color: Colors.white),
+      title: new Text("添加朋友",
+      style: TextStyle(color: Colors.white)),
+      ),
+      ),
+      Expanded(
+      child: new ListTile(
+      leading: Icon(Icons.add, color: Colors.white),
+      title: new Text("扫一扫",
+      style: TextStyle(color: Colors.white)),
+      ),
+      ),
+      Expanded(
+      child: new ListTile(
+      leading: Icon(Icons.add, color: Colors.white),
+      title: new Text("首付款",
+      style: TextStyle(color: Colors.white)),
+      ),
+      ),
+      Expanded(
+      child: new ListTile(
+      leading: Icon(Icons.add, color: Colors.white),
+      title: new Text("帮助与反馈",
+      style: TextStyle(color: Colors.white)),
+      ),
+      ),
+      ],
+      ),
+      ),
+      )));
     });
 
     Overlay.of(context).insert(overlayEntry);
 
     Future.delayed(Duration(seconds: 2)).then((value){
-      overlayEntry.remove();
+//      overlayEntry.remove();
     });
   }
 }
