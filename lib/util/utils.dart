@@ -30,7 +30,7 @@ List<Map> transformData({List list}){
       'value2': {
         'text': listHasValue(index + 1, list),
         'index': index + 1
-      }
+      },
     };
     result.add(item);
   }
