@@ -11,7 +11,7 @@ String getRandomNumber(){
   return result;
 }
 
-List<Map> transformData({List list}){
+List<Map> transformData({List<Map> list}){
 
   List<Map> result = new List();
   int length = 0;
@@ -37,10 +37,13 @@ List<Map> transformData({List list}){
   return result;
 }
 
-String listHasValue(int index, List list){
+Map listHasValue(int index, List<Map> list){
   if(index <= (list.length -1)){
     return list[index];
   }else{
-    return '';
+    return {
+      'value': '',
+      'type': 0
+    };
   }
 }

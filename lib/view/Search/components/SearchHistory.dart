@@ -5,7 +5,7 @@ class HistoryRecode extends StatefulWidget{
 
   HistoryRecode({Key key, this.historyList}): super(key: key);
 
-  final List historyList;
+  final List<Map> historyList;
 
   @override
   State<StatefulWidget> createState() {
@@ -85,7 +85,7 @@ class _HistoryRecodeState extends State<HistoryRecode>{
 
   bool iconFlag = true;
   bool deleteFlag = true;
-  List showHistoryData;
+  List<Map> showHistoryData;
 
   @override
   void initState() {

@@ -5,7 +5,7 @@ class Hotspots extends StatelessWidget{
 
   Hotspots({Key key, this.list}):super(key: key);
 
-  final List list;
+  final List<Map> list;
 
 
   @override

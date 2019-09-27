@@ -3,11 +3,19 @@ import 'package:flutter_app/util/utils.dart';
 
 class ListContent extends StatelessWidget{
 
-  ListContent({Key key, this.list, this.showClose = false, this.closeBtn, this.lastWidget}):super(key:key);
+  ListContent({
+    Key key,
+    this.list,
+    this.showClose = false,
+    this.closeBtn,
+    this.lastWidget,
+    this.lastBtn
+  }):super(key:key);
 
-  final List list;
+  final List<Map> list;
   final bool showClose;
   final ValueChanged<int> closeBtn;
+  final ValueChanged<bool> lastBtn;
   final Widget lastWidget;
 
   @override
@@ -23,7 +31,14 @@ class ListContent extends StatelessWidget{
               children: <Widget>[
                 Item(value: e['value1'], showClose: showClose, closeBtn: closeBtn,),
                 Separator(),
-                e['value2']['text'] == '' ? Expanded(flex: 1, child: lastWidget,) : Item(value: e['value2'], showClose: showClose, closeBtn: closeBtn,),
+                e['value2']['text']['value'] == '' && lastWidget!= null ?
+                 Expanded(
+                   flex: 1,
+                   child: InkWell(
+                     child: lastWidget,
+                     onTap: _lastBtn,
+                   ),
+                 ) : Item(value: e['value2'], showClose: showClose, closeBtn: closeBtn,),
               ],
             );
           }).toList(),
@@ -37,6 +52,12 @@ class ListContent extends StatelessWidget{
         )
       ],
     );
+  }
+
+  void _lastBtn(){
+    if(lastBtn != null){
+      lastBtn(false);
+    }
   }
 
 }
@@ -61,10 +82,9 @@ class Item extends StatelessWidget{
             Expanded(
               flex: 1,
               child:  Container(
-//                padding: EdgeInsets.only(left: 10, right: 10),
                 margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
                 child: Container(
-                  child: Text(value['text'],
+                  child: Text(value['text']['value'],
                     style: TextStyle(
                       fontSize: 16.0,
                     ),
@@ -75,7 +95,41 @@ class Item extends StatelessWidget{
               ),
             ),
             Offstage(
-              offstage: value['text'] != '' ? !showClose:true,
+              offstage: value['text']['type'] != '1',
+              child: Container(
+                width: 14.0,
+                height: 14.0,
+                decoration: BoxDecoration(
+                   color: Colors.blue,
+                   borderRadius: BorderRadius.circular(3.0)
+                ),
+                child: Center(
+                  child: Text("推",style: TextStyle(
+                      fontSize: 10.0,
+                      color: Colors.white
+                  ),),
+                )
+              ),
+            ),
+            Offstage(
+              offstage: value['text']['type'] != '2',
+              child: Container(
+                width: 14.0,
+                height: 14.0,
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.circular(3.0)
+                ),
+                child: Center(
+                  child: Text("热",style: TextStyle(
+                      fontSize: 10.0,
+                      color: Colors.white
+                  ),),
+                )
+              ),
+            ),
+            Offstage(
+              offstage: value['text']['value'] != '' ? !showClose:true,
               child:  InkWell(
                 child: Icon(Icons.close, size: 20.0, color: Colors.grey,),
                 onTap: _closeBtn,
@@ -87,6 +141,7 @@ class Item extends StatelessWidget{
   }
 
  void _closeBtn(){
+    print(value);
     closeBtn(value['index']);
   }
 }

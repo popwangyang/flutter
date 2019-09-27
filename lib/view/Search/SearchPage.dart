@@ -30,22 +30,76 @@ class _SearchState extends State<Search> {
 
   ValueNotifierData vn = ValueNotifierData('');
 
-  List dataList = ['阿里的第一颗芯片', '去欧洲旅行攻略', '火星勘测到生命物质', '魔兽世界怀旧服持续火爆是是是',];
-  List historyList = [
-    '收割机的制造原理',
-    '书院的收费制度',
-    '水源KTV暴力事件',
-    '教官带千名学生蹦迪',
-    '法国奶豹逛街被抓',
-    '阿里的第一颗芯片',
-    '去欧洲旅行攻略',
-    '火星勘测到生命物质',
-    '魔兽世界怀旧服持续火爆是是是',
-    '水源KTV暴力事件',
-    '教官带千名学生蹦迪',
-    '法国奶豹逛街被抓',
-    '阿里的第一颗芯片',
-    '去欧洲旅行攻略',
+  List<Map> dataList = [
+    {
+      'value': '阿里的第一颗芯片',
+      'type': '0',
+    },
+    {
+      'value': '去欧洲旅行攻略',
+      'type': '0',
+    },
+    {
+      'value': '火星勘测到生命物质',
+      'type': '0',
+    },
+    {
+      'value': '魔兽世界怀旧服持续火爆是是是',
+      'type': '0',
+    }
+  ];
+
+
+
+  List<Map> historyList = [
+    {
+      'value': '收割机的制造原理',
+      'type': '0',
+    },
+    {
+      'value': '书院的收费制度',
+      'type': '0',
+    },
+    {
+      'value': '水源KTV暴力事件',
+      'type': '0',
+    },
+    {
+      'value': '教官带千名学生蹦迪',
+      'type': '0',
+    },
+    {
+      'value': '收割机的制造原理',
+      'type': '0',
+    },
+    {
+      'value': '法国奶豹逛街被抓',
+      'type': '0',
+    },
+    {
+      'value': '阿里的第一颗芯片',
+      'type': '0',
+    },
+    {
+      'value': '去欧洲旅行攻略',
+      'type': '0',
+    },
+    {
+      'value': '收割机的制造原理',
+      'type': '0',
+    },
+    {
+      'value': '法国奶豹逛街被抓',
+      'type': '0',
+    },
+    {
+      'value': '阿里的第一颗芯片',
+      'type': '0',
+    },
+    {
+      'value': '去欧洲旅行攻略',
+      'type': '0',
+    }
   ];
   List<Map> appletsData = [
     {
@@ -129,7 +183,7 @@ class _SearchState extends State<Search> {
                     Hotspots(list: dataList),
                     HistoryRecode(historyList: historyList,),
                     AppletsList(listData: appletsData,),
-                    Recommend(),
+                    Recommend(data: recommendList,),
                   ],
                 ),
             ),
