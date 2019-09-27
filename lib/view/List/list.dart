@@ -25,51 +25,58 @@ class MyListPage extends StatefulWidget{
 }
 
 class _MyListPageState extends State<MyListPage>{
-  
-  List list = new List();
-  
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    getData();
-  }
-  
-  Future getData() async {
-    await Future.delayed(Duration(seconds: 2), (){
-      setState(() {
-        list = List.generate(15, (i){
-          return '哈喽,我是原始数据 $i';
-        });
-      });
-    });
-  }
-  
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return RefreshIndicator(
-      onRefresh: _onRefresh,
-      child: ListView.builder(
-        itemBuilder: _renderRow,
-        itemCount: list.length,
+    return Listener(
+      child: Container(
+        color: Colors.yellow,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: Padding(
+          child: SizedBox(
+            height: y,
+            child: Text("pppp"),
+          ),
+          padding: EdgeInsets.only(top: y),
+        ),
       ),
+      onPointerDown: (PointerEvent e) => _down(e),
+      onPointerMove: (PointerEvent e) => _move(e),
+      onPointerUp: (PointerEvent e) => _up(e),
     );
   }
 
-  Widget _renderRow(BuildContext context, index) {
-    return ListTile(
-      title: Text(list[index]),
-    );
+  double start;
+  double x;
+  double y = 0;
+  final double a = 300;
+  final double b = 0.5;
+
+
+  _down(e){
+    start = e.position.dy;
   }
 
-  Future<Null> _onRefresh() async {
-    await Future.delayed(Duration(seconds: 3), () {
-      print('refresh');
-      setState(() {
-        list = List.generate(20, (i) => '哈喽,我是新刷新的 $i');
-      });
+  _move(e){
+    x = e.position.dy - start;
+//    print(x);
+    _getY();
+  }
+
+  _up(e){
+    print(e);
+  }
+
+  _getY(){
+    y = a * x  /  (a/2 + x );
+    setState(() {
+
     });
+
+    print(y);
   }
+
 }
 

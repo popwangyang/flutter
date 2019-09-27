@@ -7,6 +7,7 @@ import 'package:flutter_app/view/PopupMenuButton/PopupMenuButton.dart';
 import 'package:flutter_app/view/Overlay/Overlay.dart';
 import 'package:flutter_app/view/Event/event.dart';
 import 'package:flutter_app/view/Search/SearchPage.dart';
+import 'package:flutter_app/view/Dome/PassValue.dart';
 
 final routes = {
   "index":(context) => new TextPage(),
@@ -18,4 +19,5 @@ final routes = {
   "Overlay": (context) => new OverlayDome(),
   "eventPage": (context) => new EventPage(),
   "searchPage": (context) => new Search(),
+  "passValuePage": (context) => new PassValue(),
 };
