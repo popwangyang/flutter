@@ -87,6 +87,13 @@ class IndexPage extends StatelessWidget{
                 Navigator.of(context).pushNamed('passValuePage');
               },
             ),
+            FlatButton(
+              child: Text('ancestorWidgetOfExactType'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.of(context).pushNamed('ancestorWidgetOfExactType');
+              },
+            ),
           ],
         ),
       ),
