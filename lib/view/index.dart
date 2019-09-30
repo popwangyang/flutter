@@ -94,6 +94,20 @@ class IndexPage extends StatelessWidget{
                 Navigator.of(context).pushNamed('ancestorWidgetOfExactType');
               },
             ),
+            FlatButton(
+              child: Text('inheritedwidget'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.of(context).pushNamed('inheritedwidget');
+              },
+            ),
+            FlatButton(
+              child: Text('inheritedwidget1'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.of(context).pushNamed('inheritedwidget1');
+              },
+            ),
           ],
         ),
       ),

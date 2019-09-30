@@ -9,6 +9,8 @@ import 'package:flutter_app/view/Event/event.dart';
 import 'package:flutter_app/view/Search/SearchPage.dart';
 import 'package:flutter_app/view/Dome/PassValue.dart';
 import 'package:flutter_app/view/Dome/ancestorWidgetOfExactType.dart';
+import 'package:flutter_app/view/Dome/inheritedwidget01.dart';
+import 'package:flutter_app/view/Dome/inheritedwidget02.dart';
 
 final routes = {
   "index":(context) => new TextPage(),
@@ -21,5 +23,7 @@ final routes = {
   "eventPage": (context) => new EventPage(),
   "searchPage": (context) => new Search(),
   "passValuePage": (context) => new PassValue(),
-  "ancestorWidgetOfExactType": (context) => new Foo(),
+//  "ancestorWidgetOfExactType": (context) => new Foo(),
+  "inheritedwidget": (context) => new InheritedWidgetConst(),
+  "inheritedwidget1": (context) => new Page(),
 };
