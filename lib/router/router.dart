@@ -11,6 +11,8 @@ import 'package:flutter_app/view/Dome/PassValue.dart';
 import 'package:flutter_app/view/Dome/ancestorWidgetOfExactType.dart';
 import 'package:flutter_app/view/Dome/inheritedwidget01.dart';
 import 'package:flutter_app/view/Dome/inheritedwidget02.dart';
+import 'package:flutter_app/view/Dome/gridView.dart';
+import 'package:flutter_app/view/Dome/provider.dart';
 
 final routes = {
   "index":(context) => new TextPage(),
@@ -26,4 +28,6 @@ final routes = {
 //  "ancestorWidgetOfExactType": (context) => new Foo(),
   "inheritedwidget": (context) => new InheritedWidgetConst(),
   "inheritedwidget1": (context) => new Page(),
+  "gridView": (context) => new GridPage(),
+  "provider": (context) => new ProviderPage(),
 };

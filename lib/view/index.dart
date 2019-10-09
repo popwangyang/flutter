@@ -108,6 +108,20 @@ class IndexPage extends StatelessWidget{
                 Navigator.of(context).pushNamed('inheritedwidget1');
               },
             ),
+            FlatButton(
+              child: Text('gridView'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.of(context).pushNamed('gridView');
+              },
+            ),
+            FlatButton(
+              child: Text('provider'),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.of(context).pushNamed('provider');
+              },
+            ),
           ],
         ),
       ),
